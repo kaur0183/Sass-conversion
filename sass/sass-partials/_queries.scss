@@ -1,0 +1,146 @@
+// main SASS file
+//@media all and (min-width:$screen_small_1) and (max-width: $screen_small_2) {
+//	.col-3 {
+//		@include prabh(1, 0%, 100%);
+//		float: left;
+//	}
+//	.col-4 {
+//		@include prabh(1, 0%, 100%);
+//		float: left;
+//	}
+//}
+@include tablet {
+	header {
+		width: 900px;
+		margin: 0 auto;
+		&:before {
+			width: 300px;
+		}
+		&:after {
+			width: 300px;
+		}
+	}
+	header h1 {
+		width: 100%;
+		color: #3a5E63;
+	}
+	header h1 i.fa-lg {
+		display: inline;
+		color: #3a5E63;
+		vertical-align: baseline;
+		float: none;
+		font-size: 4rem;
+		line-height: 6.3968rem;
+	}
+	header h1 i.fa-lg ~ span {
+		float: none;
+		letter-spacing: 0.25rem;
+		font-size: 3.998rem;
+		/**
+        1 lines of 3.998 * 1.6 = 6.3968
+        **/
+		text-align: left;
+	}
+	header nav {
+		position: static;
+		clear: both;
+		width: 100%;
+		padding: 0;
+	}
+	header nav>ul>li {
+		width: 20%;
+		float: left;
+		background-color: #fff;
+	}
+	header nav>ul>li>a {
+		font-size: 1rem;
+		line-height: 2rem;
+		min-height: 2rem;
+		border: none;
+		border-left: 1px solid #d4d4d4;
+		padding: 0 1.0rem;
+		margin: 1.0rem 0;
+		background-color: #fff;
+	}
+	header nav>ul>li:first-child a {
+		border-left: none;
+	}
+	.row {
+		clear: both;
+	}
+	.col-3 {
+		@include prabh(1, 0%, 100%);
+		float: left;
+	}
+	.col-4 {
+		@include prabh(2, 0%, 100%);
+		float: left;
+	}
+}
+
+@include desktop {
+	header {
+		width: 1400px;
+		margin: 0 auto;
+		&:before,
+		&:after {
+			width: 450px;
+		}
+		h1 {
+			width: 100%;
+			color: #7C593C;
+			i.fa-lg {
+				display: inline;
+				color: #7C593C;
+				vertical-align: baseline;
+				float: none;
+				font-size: 4rem;
+				line-height: 6.3968rem;
+				~ span {
+					float: none;
+					letter-spacing: 0.25rem;
+					font-size: 3.998rem;
+					/**
+          1 lines of 3.998 * 1.6 = 6.3968
+          **/
+					text-align: left;
+				}
+			}
+		}
+		nav {
+			position: static;
+			clear: both;
+			width: 100%;
+			padding: 0;
+			> ul > li {
+				width: 20%;
+				float: left;
+				background-color: #fff;
+				> a {
+					font-size: 1.414rem;
+					line-height: 2rem;
+					min-height: 2rem;
+					border: none;
+					border-left: 1px solid #d4d4d4;
+					padding: 0 1.0rem;
+					margin: 1.0rem 0;
+					background-color: #fff;
+				}
+				&:first-child a {
+					border-left: none;
+				}
+			}
+		}
+	}
+	.row {
+		clear: both;
+	}
+	.col-3 {
+		@include prabh(3, 0%, 100%);
+		float: left;
+	}
+	.col-4 {
+		@include prabh(4, 0%, 100%);
+		float: left;
+	}
+}

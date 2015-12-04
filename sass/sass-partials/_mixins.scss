@@ -1,0 +1,20 @@
+// main SASS file
+@mixin prabh ( $num_of_colum, $spacing, $width) {
+	width: ($width - $spacing * ($num_of_colum - 1))/ $num_of_colum;
+	margin-left: $spacing;
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+@mixin tablet {
+	@media all and (min-width: $medium_small_1) and (max-width: $medium_small_2) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media all and (min-width: $large_small_1) {
+		@content;
+	}
+}

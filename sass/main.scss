@@ -1,0 +1,291 @@
+// main SASS file
+// defults
+@import "sass-partials/_variables";
+@import "sass-partials/_mixins";
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	&:after,
+	&:before {
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+}
+
+html {
+	font-size: 16px;
+	font-family: $font_family_a, $font_family_b, $font_family_c, $font_family_d;
+	/* default for whole page */
+	line-height: 1.6;
+}
+
+h1 {
+	font-family: $font_family_e, $font_family_f, $font_family_g, $font_family_h, $font_family_i;
+	/* serif for the headings */
+}
+
+h2 {
+	font-family: $font_family_e, $font_family_f, $font_family_g, $font_family_h, $font_family_i;
+	/* serif for the headings */
+}
+
+h3 {
+	font-family: $font_family_e, $font_family_f, $font_family_g, $font_family_h, $font_family_i;
+	/* serif for the headings */
+}
+
+h4 {
+	font-family: $font_family_e, $font_family_f, $font_family_g, $font_family_h, $font_family_i;
+	/* serif for the headings */
+}
+
+ul {
+	list-style: none;
+}
+
+
+/***********************************************
+                SPECIAL
+***********************************************/
+
+.clearfix:after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+
+/***********************************************
+                LAYOUT
+***********************************************/
+
+.bg-header {
+	background-color: $white_color;
+	background-color: $light_blue_color;
+	color: $dark_grey_color;
+	border-bottom: 1rem solid $med_blue_color;
+	border-top: 1rem solid $dark_blue_color;
+	position: relative;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -1rem;
+		width: 30%;
+		height: 1rem;
+		background-color: $dark_blue_color;
+	}
+	&:before {
+		left: 0;
+	}
+	&:after {
+		right: 0;
+	}
+}
+
+.bg-focal {
+	background-color: $light_brown_color;
+	color: $dark_brown_color;
+}
+
+.bg-content1 {
+	background-color: $white_color;
+	color: $dark_grey_color;
+}
+
+.bg-content2 {
+	background-color: #C7F7FF;
+	color: $dark_blue_color;
+}
+
+.bg-footer {
+	background-color: $white_color;
+	color: $light_grey_color;
+}
+
+header {
+	width: 400px;
+	/* default */
+	margin: 0 auto;
+	position: relative;
+	h1 {
+		width: 100%;
+		padding: 0 2rem;
+	}
+	nav {
+		width: 100%;
+		> ul li {
+			width: 100%;
+			float: none;
+		}
+	}
+}
+
+section {
+	&.focal {
+		width: 400px;
+		/* default */
+		margin: 0 auto;
+	}
+	&.content1,
+	&.content2 {
+		padding: 2rem 0;
+	}
+}
+
+.row {
+	clear: both;
+}
+
+.col-2 {
+	width: 50%;
+	float: left;
+	padding-bottom: 2rem;
+	border-left: 1px solid $dark_blue_color;
+	margin-bottom: 2rem;
+}
+
+footer {
+	.col-2:first-child {
+		border-left: 0;
+	}
+	padding: 2rem 0;
+	p:last-child {}
+}
+
+
+/***********************************************
+                NAVIGATION
+***********************************************/
+
+header {
+	nav {
+		padding: 2rem 0;
+		clear: both;
+		> ul > li > a {
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: $dark_grey_color;
+			font-size: 1.414rem;
+			letter-spacing: 0.25rem;
+			border: 1px solid $light_grey_color;
+			border-bottom: none;
+			padding: 1.0rem 2rem;
+			line-height: 1;
+			background-color: $white_color;
+			&:hover {
+				font-weight: 700;
+				color: $dark_brown_color;
+			}
+		}
+	}
+	h1 {
+		color: $dark_brown_color;
+		letter-spacing: 0.1rem;
+		i.fa-lg {
+			display: block;
+			width: 25%;
+			float: left;
+			font-size: 7rem;
+			line-height: 12.7936rem;
+			color: $light_brown_color;
+			~ span {
+				float: right;
+				width: 75%;
+				font-size: 3.998rem;
+				/**
+        2 lines of 3.998 * 1.6 = 12.7936
+        **/
+				padding-left: 1rem;
+				text-align: right;
+			}
+		}
+	}
+}
+
+
+/***********************************************
+                CONTENT
+***********************************************/
+
+.focal {
+	h2 {
+		font-size: 1.999rem;
+		line-height: 1.2;
+		padding: 2rem 2rem 1rem 2rem;
+	}
+	.author {
+		font-size: 1rem;
+		padding: 0.2rem 2rem 2rem;
+	}
+}
+
+.content1 {
+	h3 {
+		font-size: 1.999rem;
+		padding: 0.2rem 2rem 2rem;
+		i {
+			vertical-align: middle;
+			padding-right: 2rem;
+		}
+	}
+	p {
+		font-size: 1.414rem;
+		padding: 0.5rem 2rem 2rem;
+	}
+}
+
+.content2 {
+	h3 {
+		font-size: 1.999rem;
+		padding: 1rem 2rem 0.5rem;
+	}
+	h4 {
+		font-size: 1.999rem;
+		padding: 1rem 2rem 0rem;
+	}
+	p {
+		font-size: 1.414rem;
+		padding: 0.5rem 2rem 1rem;
+	}
+	li {
+		padding: 0.5rem 2rem;
+		font-size: 1.414rem;
+	}
+}
+
+
+/***********************************************
+                FOOTER
+***********************************************/
+
+footer {
+	h4 {
+		font-size: 1.414rem;
+		padding: 0.5rem 2rem;
+		color: $dark_brown_color;
+	}
+	p {
+		font-size: 1rem;
+		padding: 0.5rem 2rem;
+		color: $dark_grey_color;
+	}
+	.fa-circle {
+		color: $dark_grey_color;
+	}
+	h4 {
+		&[lang=de] {
+			display: block;
+		}
+		&[lang=en],
+		&[lang=ar],
+		&[lang=ru] {
+			display: none;
+		}
+	}
+}
+
+@import "sass-partials/_queries";
